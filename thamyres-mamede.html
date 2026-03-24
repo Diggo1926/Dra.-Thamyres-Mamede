@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thamyres Mamede — Advogada | OAB/SP 420.752</title>
+<meta name="description" content="Advogada especializada em Indenização de Seguros de Vida, DPVAT, Benefícios de INSS e Causas Cíveis. Mauá, SP.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --vinho:        #3d0c0c;
+  --vinho-mid:    #541414;
+  --vinho-card:   #4a1010;
+  --vinho-light:  #621818;
+  --gold:         #c9a84c;
+  --gold-light:   #dfc06a;
+  --cream:        #faf6f0;
+  --cream-soft:   #f2e8d9;
+  --white:        #ffffff;
+  --text-on-dark: #f5ede0;
+  --muted-on-dark:#c4a882;
+  --text-on-light:#1e0a0a;
+  --muted-on-light:#6b4040;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--vinho); color:var(--text-on-dark); font-family:'Lato', sans-serif; font-weight:300; overflow-x:hidden; }
+
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:var(--vinho); }
+::-webkit-scrollbar-thumb { background:var(--gold); border-radius:2px; }
+
+/* ─── NAVBAR ─── */
+#navbar {
+  position:fixed; top:0; left:0; right:0; z-index:999;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 64px;
+  background:rgba(61,12,12,0.96);
+  border-bottom:1px solid rgba(201,168,76,0.2);
+  backdrop-filter:blur(14px);
+  transition:all .35s;
+}
+#navbar.scrolled { padding:13px 64px; box-shadow:0 4px 28px rgba(0,0,0,0.35); }
+
+.nav-brand {
+  font-family:'Cinzel', serif;
+  font-size:13px; font-weight:600;
+  letter-spacing:2.5px; color:var(--gold);
+  text-decoration:none; text-transform:uppercase;
+}
+.nav-brand span { color:rgba(201,168,76,0.55); font-weight:400; }
+
+.nav-links { display:flex; gap:32px; list-style:none; }
+.nav-links a {
+  font-family:'Cinzel', serif; font-size:9px;
+  letter-spacing:2px; color:var(--muted-on-dark);
+  text-decoration:none; text-transform:uppercase;
+  transition:color .3s; position:relative; padding-bottom:3px;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:0; left:0;
+  width:0; height:1px; background:var(--gold); transition:width .3s;
+}
+.nav-links a:hover { color:var(--gold); }
+.nav-links a:hover::after { width:100%; }
+
+.nav-cta {
+  background:var(--gold); color:var(--vinho);
+  padding:9px 22px; font-family:'Cinzel', serif;
+  font-size:9px; font-weight:600; letter-spacing:2px;
+  text-transform:uppercase; text-decoration:none;
+  transition:all .3s; border:1px solid var(--gold);
+}
+.nav-cta:hover { background:transparent; color:var(--gold); }
+
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; }
+.hamburger span { display:block; width:22px; height:1px; background:var(--gold); transition:all .35s ease; }
+
+.hamburger.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+.hamburger.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+
+/* ─── MOBILE MENU ─── */
+.mobile-menu {
+  display:none; position:fixed; inset:0; z-index:998;
+  background:rgba(61,12,12,0.99);
+  flex-direction:column; align-items:center; justify-content:center; gap:30px;
+}
+.mobile-menu.open { display:flex; }
+.mobile-menu a { font-family:'Cinzel', serif; font-size:16px; letter-spacing:3px; color:var(--gold); text-decoration:none; text-transform:uppercase; }
+/* ─── HERO ─── */
+#hero {
+  min-height:100vh;
+  background:var(--vinho);
+  display:flex; align-items:center;
+  position:relative; overflow:hidden;
+}
+
+/* Subtle texture overlay */
+.hero-texture {
+  position:absolute; inset:0; pointer-events:none;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(201,168,76,0.03) 80px, rgba(201,168,76,0.03) 81px),
+    repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(201,168,76,0.03) 80px, rgba(201,168,76,0.03) 81px);
+}
+
+/* Decorative gold border lines */
+.hero-border-top {
+  position:absolute; top:110px; left:64px; right:64px; height:1px;
+  background:linear-gradient(90deg, var(--gold), rgba(201,168,76,0.2), transparent);
+}
+.hero-border-bottom {
+  position:absolute; bottom:80px; left:64px; right:64px; height:1px;
+  background:linear-gradient(90deg, rgba(201,168,76,0.2), var(--gold), rgba(201,168,76,0.2));
+}
+.hero-border-left {
+  position:absolute; top:0; bottom:0; left:0; width:3px;
+  background:linear-gradient(180deg, transparent, var(--gold), transparent);
+}
+
+.hero-inner {
+  position:relative; z-index:2;
+  max-width:1200px; margin:0 auto;
+  padding:140px 64px 100px;
+  display:grid; grid-template-columns:1.2fr 0.8fr; gap:80px;
+  align-items:center; width:100%;
+}
+
+/* Left */
+.hero-eyebrow {
+  font-family:'Cinzel', serif; font-size:9px;
+  letter-spacing:4px; color:var(--gold);
+  text-transform:uppercase; margin-bottom:20px;
+  display:flex; align-items:center; gap:14px;
+  opacity:0; transform:translateY(16px);
+  animation:fadeUp .7s .1s ease forwards;
+}
+.hero-eyebrow::before { content:''; width:28px; height:1px; background:var(--gold); }
+
+h1.hero-name {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(60px, 6.5vw, 92px); font-weight:300;
+  line-height:0.95; color:var(--cream); margin-bottom:14px;
+  opacity:0; transform:translateY(22px);
+  animation:fadeUp .85s .2s ease forwards;
+}
+h1.hero-name em {
+  font-style:italic; color:var(--gold-light);
+  display:block; font-size:1.05em;
+}
+
+.hero-titles {
+  margin-bottom:32px;
+  opacity:0; animation:fadeUp .7s .35s ease forwards;
+}
+.hero-titles .advogada {
+  font-family:'Cinzel', serif; font-size:12px;
+  letter-spacing:5px; color:var(--gold); text-transform:uppercase;
+}
+.hero-titles .oab {
+  font-family:'Cinzel', serif; font-size:9px;
+  letter-spacing:3px; color:rgba(201,168,76,0.45); margin-top:4px;
+}
+
+.hero-divider {
+  width:48px; height:1px; background:var(--gold);
+  margin-bottom:28px;
+  opacity:0; animation:fadeUp .6s .45s ease forwards;
+}
+
+.hero-desc {
+  font-family:'Cormorant Garamond', serif;
+  font-size:22px; font-weight:300; line-height:1.8;
+  color:rgba(245,237,224,0.82); margin-bottom:42px;
+  opacity:0; animation:fadeUp .8s .55s ease forwards;
+}
+
+.hero-btns {
+  display:flex; gap:14px; flex-wrap:wrap;
+  opacity:0; animation:fadeUp .7s .7s ease forwards;
+}
+
+.btn-primary {
+  background:var(--gold); color:var(--vinho);
+  padding:15px 36px; font-family:'Cinzel', serif;
+  font-size:9px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; text-decoration:none; transition:all .3s;
+}
+.btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); }
+
+.btn-outline {
+  border:1px solid rgba(201,168,76,0.55); color:var(--gold);
+  padding:15px 36px; font-family:'Cinzel', serif;
+  font-size:9px; letter-spacing:2px;
+  text-transform:uppercase; text-decoration:none; transition:all .3s;
+}
+.btn-outline:hover { border-color:var(--gold); background:rgba(201,168,76,0.07); }
+
+/* Right panel */
+.hero-panel {
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(201,168,76,0.2);
+  padding:36px 32px;
+  opacity:0; animation:fadeLeft .9s .5s ease forwards;
+}
+.panel-title {
+  font-family:'Cinzel', serif; font-size:8px;
+  letter-spacing:3px; color:var(--gold);
+  text-transform:uppercase; margin-bottom:24px;
+  padding-bottom:14px; border-bottom:1px solid rgba(201,168,76,0.2);
+}
+.panel-list { display:flex; flex-direction:column; }
+.panel-item {
+  display:flex; align-items:center; gap:16px;
+  padding:14px 0; border-bottom:1px solid rgba(201,168,76,0.1);
+  transition:padding-left .3s;
+}
+.panel-item:last-child { border-bottom:none; }
+.panel-item:hover { padding-left:6px; }
+.panel-dash { width:16px; height:1px; background:var(--gold); flex-shrink:0; }
+.panel-text {
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px; color:var(--text-on-dark); font-weight:400; line-height:1.4;
+}
+
+.scroll-hint {
+  position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  opacity:0; animation:fadeUp .6s 1.3s ease forwards;
+}
+.scroll-hint span {
+  font-family:'Cinzel', serif; font-size:8px;
+  letter-spacing:3px; color:rgba(201,168,76,0.5); text-transform:uppercase;
+}
+.scroll-line { width:1px; height:34px; background:linear-gradient(180deg,var(--gold),transparent); animation:pulse 2s infinite; }
+
+/* ─── SECTION BASE ─── */
+.sec-eyebrow {
+  font-family:'Cinzel', serif; font-size:9px;
+  letter-spacing:4px; color:var(--gold); text-transform:uppercase;
+  display:flex; align-items:center; justify-content:center; gap:16px;
+  margin-bottom:14px;
+}
+.sec-eyebrow::before, .sec-eyebrow::after { content:''; width:24px; height:1px; background:var(--gold); }
+
+.sec-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(36px, 4vw, 52px); font-weight:300; line-height:1.15;
+}
+.sec-title em { font-style:italic; }
+
+/* ─── ÁREAS ─── */
+#areas {
+  background:var(--cream); padding:110px 64px;
+}
+#areas .sec-title { color:var(--vinho); }
+#areas .sec-title em { color:var(--vinho-light); }
+#areas .sec-header { text-align:center; margin-bottom:60px; }
+
+.areas-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:3px; max-width:1100px; margin:0 auto;
+}
+
+.area-card {
+  background:var(--white); padding:44px 40px;
+  border:1px solid rgba(61,12,12,0.07);
+  position:relative; overflow:hidden;
+  transition:all .4s;
+}
+.area-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0;
+  width:3px; background:var(--gold);
+  transform:scaleY(0); transform-origin:bottom; transition:transform .4s;
+}
+.area-card:hover { box-shadow:0 12px 40px rgba(61,12,12,0.1); transform:translateY(-3px); }
+.area-card:hover::before { transform:scaleY(1); }
+
+.area-num {
+  font-family:'Cormorant Garamond', serif;
+  font-size:56px; font-weight:300; line-height:1;
+  color:rgba(201,168,76,0.18); letter-spacing:-3px;
+  margin-bottom:12px;
+}
+.area-title {
+  font-family:'Cinzel', serif; font-size:13px; font-weight:600;
+  letter-spacing:1.5px; color:var(--vinho); text-transform:uppercase;
+}
+.area-rule { width:30px; height:1px; background:var(--gold); margin:14px 0 18px; }
+.area-desc {
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px; line-height:1.8; color:var(--muted-on-light); margin-bottom:20px;
+}
+.area-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.area-list li {
+  font-family:'Cormorant Garamond', serif;
+  font-size:16px; color:var(--muted-on-light);
+  display:flex; align-items:center; gap:12px;
+}
+.area-list li::before { content:''; width:14px; height:1px; background:var(--gold); flex-shrink:0; }
+
+/* ─── PROCESSO ─── */
+#processo {
+  background:var(--vinho-mid); padding:110px 64px;
+  position:relative; overflow:hidden;
+  border-top:1px solid rgba(201,168,76,0.15);
+  border-bottom:1px solid rgba(201,168,76,0.15);
+}
+#processo::before {
+  content:''; position:absolute; inset:0;
+  background:repeating-linear-gradient(135deg, transparent, transparent 80px, rgba(201,168,76,0.02) 80px, rgba(201,168,76,0.02) 81px);
+}
+#processo .sec-title { color:var(--cream); }
+#processo .sec-title em { color:var(--gold-light); }
+#processo .sec-header { text-align:center; margin-bottom:64px; }
+
+.steps {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:32px; max-width:1100px; margin:0 auto;
+  position:relative; z-index:1;
+}
+.steps::before {
+  content:''; position:absolute; top:39px; left:12.5%; right:12.5%;
+  height:1px; background:rgba(201,168,76,0.2);
+}
+
+.step { text-align:center; padding:0 12px; }
+.step-num {
+  width:78px; height:78px; border-radius:50%;
+  border:1px solid rgba(201,168,76,0.35);
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 28px; position:relative; z-index:1;
+  background:var(--vinho-mid); transition:all .4s;
+}
+.step:hover .step-num { border-color:var(--gold); background:rgba(201,168,76,0.08); }
+.step-n {
+  font-family:'Cormorant Garamond', serif;
+  font-size:28px; font-weight:300; color:var(--gold);
+}
+.step-title {
+  font-family:'Cinzel', serif; font-size:10px; font-weight:600;
+  letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:14px;
+}
+.step-text {
+  font-family:'Cormorant Garamond', serif;
+  font-size:17px; line-height:1.8; color:rgba(245,237,224,0.72);
+}
+
+/* ─── SOBRE ─── */
+#sobre {
+  background:var(--vinho); padding:110px 64px;
+  border-top:1px solid rgba(201,168,76,0.1);
+}
+.sobre-grid {
+  max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+}
+.sobre-visual {}
+.sobre-quote-box {
+  background:var(--vinho-card);
+  border:1px solid rgba(201,168,76,0.2);
+  padding:44px 40px; position:relative;
+  margin-bottom:2px;
+}
+.sobre-quote-box::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+}
+.quote-mark {
+  font-family:'Cormorant Garamond', serif;
+  font-size:80px; line-height:.7; color:rgba(201,168,76,0.2);
+  margin-bottom:10px; display:block;
+}
+.quote-text {
+  font-family:'Cormorant Garamond', serif;
+  font-size:21px; font-style:italic; font-weight:300;
+  line-height:1.75; color:var(--text-on-dark); margin-bottom:24px;
+}
+.quote-author {
+  font-family:'Cinzel', serif; font-size:8px;
+  letter-spacing:3px; color:var(--gold); text-transform:uppercase;
+}
+.sobre-badge {
+  background:var(--gold); padding:20px 32px;
+}
+.sobre-badge-text {
+  font-family:'Cinzel', serif; font-size:9px;
+  letter-spacing:2px; color:var(--vinho); font-weight:600;
+  text-transform:uppercase; line-height:1.9;
+}
+
+.sobre-content { display:flex; flex-direction:column; gap:26px; }
+.sobre-eyebrow {
+  font-family:'Cinzel', serif; font-size:9px;
+  letter-spacing:4px; color:var(--gold); text-transform:uppercase;
+  display:flex; align-items:center; gap:14px;
+}
+.sobre-eyebrow::before { content:''; width:24px; height:1px; background:var(--gold); }
+.sobre-heading {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(32px, 3.5vw,46px); font-weight:300;
+  color:var(--cream); line-height:1.2;
+}
+.sobre-heading em { font-style:italic; color:var(--gold-light); }
+.sobre-rule { width:36px; height:1px; background:var(--gold); }
+.sobre-p {
+  font-family:'Cormorant Garamond', serif;
+  font-size:19px; line-height:1.85; color:rgba(245,237,224,0.78);
+}
+
+.creds { display:flex; flex-direction:column; gap:8px; }
+.cred {
+  display:flex; align-items:center; gap:14px;
+  padding:13px 18px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(201,168,76,0.15);
+  transition:border-color .3s;
+}
+.cred:hover { border-color:rgba(201,168,76,0.4); }
+.cred-dot { width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+.cred-label {
+  font-family:'Cormorant Garamond', serif;
+  font-size:17px; color:var(--muted-on-dark);
+}
+
+/* ─── FAQ ─── */
+#faq {
+  background:var(--vinho-card); padding:110px 64px;
+  border-top:1px solid rgba(201,168,76,0.12);
+}
+#faq .sec-title { color:var(--cream); }
+#faq .sec-title em { color:var(--gold-light); }
+#faq .sec-header { text-align:center; margin-bottom:60px; }
+
+.faq-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:2px; max-width:1000px; margin:0 auto;
+}
+.faq-item {
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(201,168,76,0.12);
+  overflow:hidden;
+}
+.faq-btn {
+  width:100%; background:none; border:none;
+  padding:22px 26px; text-align:left; cursor:pointer;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  transition:background .3s;
+}
+.faq-btn:hover { background:rgba(201,168,76,0.05); }
+.faq-q {
+  font-family:'Cinzel', serif; font-size:10px; font-weight:600;
+  letter-spacing:1px; color:var(--cream); text-transform:uppercase;
+  line-height:1.5; text-align:left;
+}
+.faq-icon {
+  width:26px; height:26px; border-radius:50%;
+  border:1px solid rgba(201,168,76,0.4);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; color:var(--gold); font-size:18px; line-height:1;
+  transition:all .3s;
+}
+.faq-item.open .faq-icon { background:var(--gold); color:var(--vinho); transform:rotate(45deg); }
+.faq-body { max-height:0; overflow:hidden; transition:max-height .4s ease; padding:0 26px; }
+.faq-item.open .faq-body { max-height:240px; padding:0 26px 22px; }
+.faq-answer {
+  font-family:'Cormorant Garamond', serif;
+  font-size:17px; line-height:1.85; color:rgba(245,237,224,0.75);
+  border-top:1px solid rgba(201,168,76,0.15); padding-top:16px;
+}
+
+/* ─── CONTATO ─── */
+#contato {
+  background:var(--vinho-mid); padding:110px 64px;
+  border-top:1px solid rgba(201,168,76,0.15);
+}
+.contato-grid {
+  max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;
+}
+.contato-left { display:flex; flex-direction:column; gap:28px; }
+.contato-eyebrow {
+  font-family:'Cinzel', serif; font-size:9px;
+  letter-spacing:4px; color:var(--gold); text-transform:uppercase;
+  display:flex; align-items:center; gap:14px;
+}
+.contato-eyebrow::before { content:''; width:24px; height:1px; background:var(--gold); }
+.contato-heading {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(36px, 4vw, 52px); font-weight:300;
+  color:var(--cream); line-height:1.15;
+}
+.contato-heading em { font-style:italic; color:var(--gold-light); }
+.contato-desc {
+  font-family:'Cormorant Garamond', serif;
+  font-size:19px; line-height:1.85; color:rgba(245,237,224,0.72);
+}
+
+.contact-items { display:flex; flex-direction:column; gap:10px; }
+.contact-item {
+  display:flex; align-items:center; gap:18px;
+  padding:16px 20px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(201,168,76,0.14);
+  text-decoration:none; transition:border-color .3s;
+}
+.contact-item:hover { border-color:rgba(201,168,76,0.4); }
+.ci-icon {
+  width:38px; height:38px; flex-shrink:0;
+  border:1px solid rgba(201,168,76,0.3); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+}
+.ci-icon svg { width:16px; height:16px; }
+.ci-label {
+  font-family:'Cinzel', serif; font-size:7.5px;
+  letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:3px;
+}
+.ci-value {
+  font-family:'Cormorant Garamond', serif;
+  font-size:17px; color:var(--text-on-dark); font-weight:300;
+}
+
+.social-row { display:flex; gap:10px; }
+.social-btn {
+  display:flex; align-items:center; gap:9px;
+  border:1px solid rgba(201,168,76,0.3); color:var(--gold);
+  padding:10px 18px; font-family:'Cinzel', serif;
+  font-size:8px; letter-spacing:2px; text-transform:uppercase;
+  text-decoration:none; transition:all .3s;
+}
+.social-btn:hover { border-color:var(--gold); background:rgba(201,168,76,0.08); }
+
+/* Form */
+.cform { display:flex; flex-direction:column; gap:16px; }
+.cf-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.cf-group { display:flex; flex-direction:column; gap:7px; }
+.cf-label {
+  font-family:'Cinzel', serif; font-size:7.5px;
+  letter-spacing:2.5px; color:var(--gold); text-transform:uppercase;
+}
+.cf-input, .cf-select, .cf-textarea {
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(201,168,76,0.2);
+  color:var(--text-on-dark);
+  padding:13px 16px;
+  font-family:'Cormorant Garamond', serif; font-size:17px;
+  outline:none; transition:border-color .3s; width:100%;
+}
+.cf-select option { background:var(--vinho-mid); color:var(--text-on-dark); }
+.cf-textarea { resize:vertical; min-height:100px; }
+.cf-input::placeholder, .cf-textarea::placeholder { color:rgba(245,237,224,0.3); }
+.cf-input:focus, .cf-select:focus, .cf-textarea:focus { border-color:var(--gold); }
+.cf-submit {
+  background:var(--gold); color:var(--vinho);
+  border:none; padding:15px 36px;
+  font-family:'Cinzel', serif; font-size:10px; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase;
+  cursor:pointer; transition:all .3s; align-self:flex-start;
+}
+.cf-submit:hover { background:var(--gold-light); transform:translateY(-1px); }
+.cf-note {
+  font-size:11px; color:rgba(201,168,76,0.4);
+  font-family:'Lato', sans-serif; font-style:italic; line-height:1.7;
+}
+.cf-success {
+  display:none; background:rgba(201,168,76,0.1);
+  border:1px solid rgba(201,168,76,0.3);
+  padding:18px 22px; text-align:center;
+}
+.cf-success p {
+  font-family:'Cormorant Garamond', serif; font-size:18px; color:var(--gold);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background:#1a0404; padding:36px 64px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; flex-wrap:wrap;
+  border-top:1px solid rgba(201,168,76,0.18);
+}
+.footer-brand { }
+.footer-name {
+  font-family:'Cinzel', serif; font-size:12px;
+  letter-spacing:2px; color:rgba(201,168,76,0.75); text-transform:uppercase;
+}
+.footer-oab {
+  font-family:'Cinzel', serif; font-size:8px;
+  letter-spacing:2px; color:rgba(201,168,76,0.35); margin-top:4px;
+}
+.footer-note {
+  font-size:10px; color:rgba(255,255,255,0.22);
+  font-family:'Lato', sans-serif; text-align:center;
+  line-height:1.8; max-width:480px;
+}
+.footer-city {
+  font-family:'Cinzel', serif; font-size:9px;
+  letter-spacing:2px; color:rgba(201,168,76,0.35);
+  text-transform:uppercase; text-align:right;
+}
+.footer-copy { font-size:10px; color:rgba(255,255,255,0.15); margin-top:4px; text-align:right; }
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+@keyframes fadeLeft { from { opacity:0; transform:translateX(28px); } to { opacity:1; transform:translateX(0); } }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.25;} }
+@keyframes floatY { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-5px);} }
+
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  #navbar, #navbar.scrolled { padding:14px 24px; }
+  .nav-links, .nav-cta { display:none; }
+  .hamburger { display:flex; }
+  .hero-inner { grid-template-columns:1fr; padding:120px 24px 80px; gap:40px; }
+  .hero-panel { display:none; }
+  #areas, #processo, #sobre, #faq, #contato { padding:80px 24px; }
+  .areas-grid { grid-template-columns:1fr; gap:3px; }
+  .steps { grid-template-columns:1fr 1fr; gap:40px; }
+  .steps::before { display:none; }
+  .sobre-grid { grid-template-columns:1fr; gap:40px; }
+  .faq-grid { grid-template-columns:1fr; }
+  .contato-grid { grid-template-columns:1fr; gap:40px; }
+  footer { padding:28px 24px; flex-direction:column; text-align:center; }
+  .footer-city, .footer-copy { text-align:center; }
+  .cf-row { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-brand">Thamyres Mamede <span>· Advogada</span></a>
+  <ul class="nav-links">
+    <li><a href="#areas">Atuação</a></li>
+    <li><a href="#processo">Como Funciona</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#faq">Dúvidas</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5511984584138" target="_blank" class="nav-cta">Fale Conosco</a>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#areas" onclick="toggleMenu()">Atuação</a>
+  <a href="#processo" onclick="toggleMenu()">Como Funciona</a>
+  <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+  <a href="#faq" onclick="toggleMenu()">Dúvidas</a>
+  <a href="#contato" onclick="toggleMenu()">Contato</a>
+  <a href="https://wa.me/5511984584138" target="_blank">WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-border-top"></div>
+  <div class="hero-border-bottom"></div>
+  <div class="hero-border-left"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Advocacia especializada</div>
+      <h1 class="hero-name">Thamyres<em>Mamede</em></h1>
+      <div class="hero-titles">
+        <div class="advogada">Advogada</div>
+        <div class="oab">OAB/SP 420.752</div>
+      </div>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">
+        Defendo os direitos de quem sofreu acidentes ou perdas — garantindo que seguros, benefícios e indenizações sejam recebidos de forma justa e integral.
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5511984584138" target="_blank" class="btn-primary">Consulta pelo WhatsApp</a>
+        <a href="#areas" class="btn-outline">Ver Áreas de Atuação</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="panel-title">Áreas de Atuação</div>
+      <div class="panel-list">
+        <div class="panel-item"><div class="panel-dash"></div><div class="panel-text">Indenização de Seguros de Vida</div></div>
+        <div class="panel-item"><div class="panel-dash"></div><div class="panel-text">DPVAT — Acidentes de Trânsito</div></div>
+        <div class="panel-item"><div class="panel-dash"></div><div class="panel-text">Benefícios de INSS</div></div>
+        <div class="panel-item"><div class="panel-dash"></div><div class="panel-text">Causas Cíveis</div></div>
+        <div class="panel-item"><div class="panel-dash"></div><div class="panel-text">Trabalhista e Família</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Conheça mais</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ÁREAS DE ATUAÇÃO -->
+<section id="areas">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="sec-header reveal">
+      <div class="sec-eyebrow">Especialidades</div>
+      <h2 class="sec-title">Áreas de <em>Atuação</em></h2>
+    </div>
+    <div class="areas-grid reveal">
+      <div class="area-card">
+        <div class="area-num"></div>
+        <div class="area-title">Seguro DPVAT</div>
+        <div class="area-rule"></div>
+        <p class="area-desc">O DPVAT é um seguro obrigatório que protege vítimas de acidentes de trânsito, independentemente de culpa. Muitas pessoas não sabem que têm direito a esta indenização.</p>
+        <ul class="area-list">
+          <li>Morte por acidente de trânsito</li>
+          <li>Invalidez permanente</li>
+          <li>Reembolso de despesas médicas</li>
+          <li>Indenização para dependentes</li>
+        </ul>
+      </div>
+      <div class="area-card">
+        <div class="area-num"></div>
+        <div class="area-title">Seguro de Vida</div>
+        <div class="area-rule"></div>
+        <p class="area-desc">Seguradoras frequentemente negam ou dificultam o pagamento de seguros de vida. Atuamos para garantir que beneficiários recebam o que é seu por direito após um sinistro.</p>
+        <ul class="area-list">
+          <li>Cobrança judicial de seguro negado</li>
+          <li>Invalidez permanente por acidente</li>
+          <li>Doenças graves cobertas</li>
+          <li>Revisão de cláusulas abusivas</li>
+        </ul>
+      </div>
+      <div class="area-card">
+        <div class="area-num"></div>
+        <div class="area-title">Benefícios de INSS</div>
+        <div class="area-rule"></div>
+        <p class="area-desc">O INSS é um direito conquistado por anos de trabalho. Quando o benefício é negado, cancelado ou calculado incorretamente, é possível e necessário recorrer.</p>
+        <ul class="area-list">
+          <li>Aposentadoria por invalidez</li>
+          <li>Auxílio-doença e auxílio-acidente</li>
+          <li>BPC/LOAS para idosos e deficientes</li>
+          <li>Pensão por morte e revisão de benefícios</li>
+        </ul>
+      </div>
+      <div class="area-card">
+        <div class="area-num"></div>
+        <div class="area-title">Causas Cíveis</div>
+        <div class="area-rule"></div>
+        <p class="area-desc">Conflitos que envolvem direitos civis exigem representação jurídica qualificada. Atuamos em cobranças indevidas, contratos e danos causados por terceiros.</p>
+        <ul class="area-list">
+          <li>Danos morais e materiais</li>
+          <li>Cobranças indevidas e negativações</li>
+          <li>Contratos e inadimplência</li>
+          <li>Responsabilidade civil</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="processo">
+  <div style="max-width:1100px;margin:0 auto;position:relative;z-index:1;">
+    <div class="sec-header reveal">
+      <div class="sec-eyebrow">Transparência</div>
+      <h2 class="sec-title">Como <em>Funciona</em></h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num"><span class="step-n">01</span></div>
+        <div class="step-title">Consulta Inicial</div>
+        <p class="step-text">Entre em contato pelo WhatsApp e explique sua situação. Analisamos se há direito a indenização ou benefício, sem custo inicial.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"><span class="step-n">02</span></div>
+        <div class="step-title">Análise do Caso</div>
+        <p class="step-text">Avaliamos documentos e as possibilidades reais. Sendo viável, apresentamos o que pode ser feito e como acontece a nossa atuação.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"><span class="step-n">03</span></div>
+        <div class="step-title">Atuação Jurídica</div>
+        <p class="step-text">Reunimos provas, elaboramos a estratégia e representamos você em todas as fases — administrativa ou judicial — com total dedicação.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"><span class="step-n">04</span></div>
+        <div class="step-title">Resolução</div>
+        <p class="step-text">Trabalhamos pela melhor solução para o seu caso, com comunicação constante e clareza sobre cada etapa do processo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="sobre-grid">
+    <div class="reveal">
+      <div class="sobre-quote-box">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">Cada caso representa uma pessoa que passou por algo difícil. Meu trabalho é garantir que a lei esteja ao seu lado.</p>
+        <div class="quote-author">Thamyres Mamede — Advogada OAB/SP 420.752</div>
+      </div>
+      <div class="sobre-badge">
+        <div class="sobre-badge-text">
+          Securitário · Previdenciário · Cível<br>
+          Trabalhista · Família · Demais Áreas
+        </div>
+      </div>
+    </div>
+    <div class="sobre-content reveal">
+      <div class="sobre-eyebrow">Sobre a Advogada</div>
+      <h2 class="sobre-heading">Comprometida com <em>cada cliente</em></h2>
+      <div class="sobre-rule"></div>
+      <p class="sobre-p">Thamyres Mamede é advogada inscrita na OAB/SP sob o nº 420.752, com atuação focada em indenizações de seguros, benefícios previdenciários e causas cíveis.</p>
+      <p class="sobre-p">Com sede em Mauá/SP, o escritório atende pessoas que muitas vezes enfrentam sozinhas sistemas complexos — seguradoras, o INSS, o Judiciário. O objetivo é garantir que cada cliente entenda seus direitos e receba o que lhe é devido.</p>
+      <div class="creds">
+        <div class="cred"><div class="cred-dot"></div><div class="cred-label">Inscrita na OAB/SP — nº 420.752</div></div>
+        <div class="cred"><div class="cred-dot"></div><div class="cred-label">Participante do Congresso Brasileiro de Direito de Seguro e Previdência</div></div>
+        <div class="cred"><div class="cred-dot"></div><div class="cred-label">Atendimento direto com a advogada responsável pelo caso</div></div>
+        <div class="cred"><div class="cred-dot"></div><div class="cred-label">Presencial em Mauá/SP e remoto para outras cidades</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div class="sec-header reveal">
+      <div class="sec-eyebrow">Informações</div>
+      <h2 class="sec-title">Dúvidas <em>Frequentes</em></h2>
+    </div>
+    <div class="faq-grid reveal">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Tenho direito ao DPVAT mesmo sendo o causador do acidente?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><p class="faq-answer">Sim. O DPVAT cobre vítimas de acidentes de trânsito independentemente de culpa. Tanto o condutor quanto passageiros e pedestres têm direito à indenização em casos de morte ou invalidez.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">A seguradora negou meu seguro de vida. Posso recorrer?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><p class="faq-answer">Sim. A negativa da seguradora não é definitiva. Em muitos casos, a recusa é indevida ou baseada em cláusulas abusivas. É possível buscar judicialmente o pagamento da indenização.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Meu benefício de INSS foi negado. O que posso fazer?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><p class="faq-answer">Você pode recorrer administrativamente junto ao INSS ou ingressar com ação judicial. Com documentação médica e trabalhista adequada, muitos casos negados são revertidos.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">O atendimento é somente presencial?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><p class="faq-answer">Não. Realizamos atendimento presencial em Mauá/SP e também de forma remota — por videoconferência ou WhatsApp — para clientes de outras cidades.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Existe prazo para cobrar indenização de seguro?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><p class="faq-answer">Sim. Os prazos variam conforme o tipo de seguro. Para o DPVAT, o prazo prescricional é de 3 anos. Não aguarde muito tempo para buscar orientação jurídica.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Como funciona a consulta inicial?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><p class="faq-answer">A consulta pode ser feita pelo WhatsApp ou pessoalmente. Você nos conta sua situação e analisamos se há direito a ser defendido. Entre em contato para agendar.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="contato-grid">
+    <div class="contato-left reveal">
+      <div class="contato-eyebrow">Contato</div>
+      <h2 class="contato-heading">Fale <em>conosco</em></h2>
+      <p class="contato-desc">Tire suas dúvidas ou agende uma consulta. O primeiro contato é simples — basta nos contar sua situação.</p>
+      <div class="contact-items">
+        <a href="https://wa.me/5511984584138" target="_blank" class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="#c9a84c"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+          <div><div class="ci-label">WhatsApp Principal</div><div class="ci-value">(11) 98458-4138</div></div>
+        </a>
+        <a href="tel:+551142172017" class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="ci-label">Telefone Fixo</div><div class="ci-value">(11) 4217-2017 · (11) 4518-4470</div></div>
+        </a>
+        <a href="mailto:thamyres-mamede@hotmail.com" class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="ci-label">E-mail</div><div class="ci-value">thamyres-mamede@hotmail.com</div></div>
+        </a>
+        <a href="https://maps.google.com/?q=Rua+Álvares+Machado+281+Mauá+SP" target="_blank" class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="ci-label">Endereço</div><div class="ci-value">Rua Álvares Machado, 281 — Sala 106, 1º Andar · Mauá/SP</div></div>
+        </a>
+      </div>
+      <div class="social-row">
+        <a href="https://instagram.com/thamyresadvogada" target="_blank" class="social-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @thamyresadvogada
+        </a>
+        <a href="https://facebook.com/thamyresadvogada" target="_blank" class="social-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="cform">
+        <div class="cf-row">
+          <div class="cf-group">
+            <label class="cf-label">Nome completo</label>
+            <input type="text" class="cf-input" placeholder="Seu nome" id="fname">
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">WhatsApp</label>
+            <input type="tel" class="cf-input" placeholder="(11) 99999-9999" id="fphone">
+          </div>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label">Assunto</label>
+          <select class="cf-select" id="fsubject">
+            <option value="">Selecione uma área</option>
+            <option>Seguro DPVAT</option>
+            <option>Seguro de Vida</option>
+            <option>Benefícios de INSS</option>
+            <option>Causa Cível</option>
+            <option>Outro assunto</option>
+          </select>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label">Descreva brevemente sua situação</label>
+          <textarea class="cf-textarea" placeholder="Conte-nos o que aconteceu..." id="fmessage"></textarea>
+        </div>
+        <button class="cf-submit" onclick="submitForm()">Enviar Mensagem</button>
+        <p class="cf-note">As informações enviadas são confidenciais e utilizadas exclusivamente para o primeiro contato. A comunicação é protegida pelo sigilo profissional.</p>
+        <div class="cf-success" id="formSuccess">
+          <p>✓ Mensagem recebida. Entraremos em contato pelo WhatsApp em breve.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="footer-name">Thamyres Mamede</div>
+    <div class="footer-oab">OAB/SP 420.752</div>
+  </div>
+  <div class="footer-note">
+    Este site tem caráter exclusivamente informativo, em conformidade com o Provimento 205/2021 do Conselho Federal da OAB e o Código de Ética e Disciplina. Não constitui captação de clientela nem promessa de resultado.
+  </div>
+  <div>
+    <div class="footer-city">Mauá · São Paulo</div>
+    <div class="footer-copy">© 2025 — Todos os direitos reservados</div>
+  </div>
+</footer>
+<script>
+// Navbar scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Reveal on scroll
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.querySelector('.hamburger').classList.toggle('open');
+}
+
+// Form → WhatsApp
+function submitForm() {
+  const name    = document.getElementById('fname').value.trim();
+  const phone   = document.getElementById('fphone').value.trim();
+  const subject = document.getElementById('fsubject').value;
+  const msg     = document.getElementById('fmessage').value.trim();
+  if (!name || !phone || !subject) { alert('Por favor, preencha nome, WhatsApp e assunto.'); return; }
+  const text = `Olá, Dra. Thamyres! Meu nome é ${name}.\n\nAssunto: ${subject}${msg ? '\n\n' + msg : ''}\n\nContato: ${phone}`;
+  window.open(`https://wa.me/5511984584138?text=${encodeURIComponent(text)}`, '_blank');
+  document.getElementById('formSuccess').style.display = 'block';
+  ['fname','fphone','fmessage'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('fsubject').value = '';
+}
+
+// Active nav link
+const secs = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold)' : '';
+  });
+});
+</script>
+</body>
+</html>
